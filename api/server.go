@@ -18,7 +18,8 @@ func ListenAndServe(addr string) {
 	router.SetTrustedProxies(nil)
 
 	// Routes
-	router.GET("/", index())
+	router.GET("/", Index)
+	router.GET("/healthcheck", Index)
 	router.POST("/request", RequestHandler)
 
 	if addr == "" {
