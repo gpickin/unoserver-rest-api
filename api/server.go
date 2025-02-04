@@ -19,7 +19,10 @@ func ListenAndServe(addr string) {
 
 	// Routes
 	router.GET("/", Index)
+	router.POST("/", BadVerb)
 	router.GET("/healthcheck", Index)
+	router.POST("/healthcheck", BadVerb)
+	router.GET("/request", BadVerb)
 	router.POST("/request", RequestHandler)
 
 	if addr == "" {
