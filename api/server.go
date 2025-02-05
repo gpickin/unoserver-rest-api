@@ -26,7 +26,7 @@ func ListenAndServe(addr string) {
 	router.POST("/request", RequestHandler)
 
 	if addr == "" {
-		addr = ":8443"
+		addr = ":80"
 	}
 
 	pm := endless.NewServer(addr, router)

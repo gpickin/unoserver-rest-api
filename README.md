@@ -16,7 +16,7 @@ NAME:
    unoserver-rest-api - The simple REST API for unoserver and unoconvert
 
 GLOBAL OPTIONS:
-   --addr value                The addr used by the unoserver api server (default: "0.0.0.0:8443")
+   --addr value                The addr used by the unoserver api server (default: "0.0.0.0:80")
    --unoserver-addr value      The unoserver addr used by the unoconvert (default: "127.0.0.1:2002") [$UNOSERVER_ADDR]
    --unoconvert-bin value      Set the unoconvert executable path. (default: "unoconvert") [$UNOCONVERT_BIN]
    --unoconvert-timeout value  Set the unoconvert run timeout (default: 0s) [$UNOCONVERT_TIMEOUT]
@@ -37,7 +37,7 @@ There is only one POST `/request` API.
 ```sh
 curl -s -v \
    --request POST \
-   --url http://127.0.0.1:8443/request \
+   --url http://127.0.0.1:80/request \
    --header 'Content-Type: multipart/form-data' \
    --form "file=@/path/to/your/file.xlsx" \
    --form 'convert-to=pdf' \
@@ -52,7 +52,7 @@ curl -s -v \
 ```sh
 curl -s -v \
    --request POST \
-   --url http://127.0.0.1:8443/request \
+   --url http://127.0.0.1:80/request \
    --header 'Content-Type: multipart/form-data' \
    --form "file=@/path/to/your/file.xlsx" \
    --form 'convert-to=pdf' \
